@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets"
+
+interface Props {
+  src: string
+  alt: string
+  height: number
+  width: number
+  bgColor?: string
+}
+
+const { src, alt, height, width, bgColor = "bg-gray-300" } = Astro.props
+---
+
+<div style={{ width: `${width}px`, height: `${height}px` }}>
+  <Image
+    height={height}
+    width={width}
+    src={src}
+    alt={alt}
+    class={`rounded-full object-cover`}
+    style={bgColor ? { backgroundColor: "#" + bgColor } : undefined}
+  />
+
+  <style>
+    img {
+      display: inline-block;
+    }
+  </style>
+</div>

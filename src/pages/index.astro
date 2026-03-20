@@ -1,11 +1,64 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { TopBar } from "@/components/TopBar"
+import DriverStandings from "../components/DriverStandings.astro"
+import Welcome from "../components/Welcome.astro"
+import Layout from "../layouts/main.astro"
+import { ModeToggle } from "@/components/ui/ModeToggle"
+import heroBg from "../../public/2026_Explainer_FIA_Front_3_4_1920x1080.avif"
+import { Image } from "astro:assets"
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <div class="font-body min-h-screen bg-background">
+    {/* Hero */}
+    <div class="relative h-100 overflow-hidden">
+      <Image
+        src={heroBg}
+        alt="F1 racing background"
+        class="absolute inset-0 h-full w-full object-cover opacity-40"
+      />
+      <div
+        class="absolute inset-0 bg-linear-to-b from-background/20 via-background/40 to-background"
+      >
+      </div>
+      <div
+        class="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center"
+      >
+        <h1
+          class="font-display mb-2 text-6xl font-black tracking-tight text-foreground"
+        >
+          F1 <span class="text-primary">STANDINGS</span>
+        </h1>
+        <p
+          class="font-display text-base tracking-[0.3em] text-muted-foreground uppercase"
+        >
+          2026 World Championship
+        </p>
+
+        {/* Stats row */}
+        <!-- <div class="mt-8 flex gap-8">
+          {
+            [
+              { icon: Flag, label: "Races", value: totalRaces },
+              { icon: Zap, label: "Leader Pts", value: maxPoints },
+              { icon: Timer, label: "Total Wins", value: totalWins },
+            ].map(({ icon: Icon, label, value }) => (
+              <div key={label} class="flex flex-col items-center gap-1">
+                <Icon class="h-4 w-4 text-primary" />
+                <span class="font-display text-xl font-bold text-foreground">
+                  {value}
+                </span>
+                <span class="text-[10px] tracking-wider text-muted-foreground uppercase">
+                  {label}
+                </span>
+              </div>
+            ))
+          }
+        </div> -->
+      </div>
+    </div>
+  </div>
 </Layout>

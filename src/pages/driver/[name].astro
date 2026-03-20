@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/main.astro"
+import DriverHero from "@/components/driver/DriverHero.astro"
+import DriverStats from "@/components/driver/DriverStats.astro"
+import { getDriverStaticPaths, type DriverPageData } from "@/lib/drivers"
+
+export async function getStaticPaths() {
+  return getDriverStaticPaths()
+}
+
+const { driver } = Astro.props as { driver: DriverPageData }
+
+if (!driver) {
+  throw new Error(`Driver page missing for slug: ${Astro.params.name}`)
+}
+---
+
+<Layout>
+  <main class="min-h-screen bg-background text-foreground">
+    <DriverHero driver={driver} />
+    <DriverStats driver={driver} />
+  </main>
+</Layout>

@@ -1,0 +1,49 @@
+---
+import type { TeamDriver } from "@/lib/teams"
+
+type Props = {
+  driver: TeamDriver
+  teamName: string
+  teamPrimary: string
+}
+
+const { driver, teamName, teamPrimary } = Astro.props
+---
+
+<article
+  class="relative overflow-hidden rounded-xl border border-white/20 text-white"
+  style={`background-image: linear-gradient(100deg, color-mix(in oklab, ${teamPrimary} 28%, #06080f) 0%, color-mix(in oklab, ${teamPrimary} 55%, #0b1020) 55%, ${teamPrimary} 100%);`}
+>
+  {/* from the f1 website */}
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_78%_48%,color-mix(in_oklab,var(--f1-team-primary)_72%,transparent),transparent_45%)]"
+  >
+  </div>
+  <div
+    class="absolute inset-0 bg-[repeating-linear-gradient(-2deg,transparent_0px,transparent_6px,rgba(255,255,255,0.06)_6px,rgba(255,255,255,0.06)_7px)] opacity-60"
+  >
+  </div>
+
+  <div
+    class="relative flex min-h-48 items-end justify-between gap-3 p-5 md:min-h-52"
+  >
+    <div class="self-start pt-1">
+      <h3 class="max-w-[9ch] text-4xl leading-[0.9] font-black md:text-5xl">
+        {driver.fullName}
+      </h3>
+      <p class="mt-1 text-sm text-white/85">{teamName}</p>
+      <p class="mt-4 text-6xl leading-none font-black">{driver.driverNumber}</p>
+    </div>
+
+    <div class="h-52 w-48 overflow-hidden md:h-56 md:w-52">
+      <img
+        src={driver.portraitUrl ?? driver.headshotUrl}
+        alt={driver.fullName}
+        class="h-88 w-auto translate-y-8 object-contain object-top md:translate-y-10"
+        loading="lazy"
+        onerror="this.onerror=null;this.src=this.getAttribute('data-fallback') || '';"
+        data-fallback={driver.headshotUrl}
+      />
+    </div>
+  </div>
+</article>

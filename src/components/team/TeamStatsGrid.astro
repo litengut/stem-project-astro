@@ -1,0 +1,35 @@
+---
+import type { TeamContent } from "@/lib/teams"
+
+type Props = {
+  team: TeamContent
+}
+
+const { team } = Astro.props
+const positionDelta = team.positionStart - team.position
+const pointsDelta = team.points - team.pointsStart
+const positionDeltaLabel =
+  positionDelta > 0 ? `+${positionDelta}` : `${positionDelta}`
+const pointsDeltaLabel = pointsDelta > 0 ? `+${pointsDelta}` : `${pointsDelta}`
+
+const stats = [
+  { label: "Season Position", value: `P${team.position}` },
+  { label: "Season Points", value: `${team.points}` },
+  { label: "Position Change", value: positionDeltaLabel },
+  { label: "Points Change", value: pointsDeltaLabel },
+  { label: "Drivers", value: `${team.roster.length}` },
+  { label: "First Team Entry", value: "1997" },
+]
+---
+
+<div class="rounded-2xl border bg-card p-5 md:p-6">
+  <h3 class="text-2xl font-black tracking-tight">2026 Season</h3>
+  <div class="mt-5 grid gap-4 sm:grid-cols-2">
+    {stats.map((stat) => (
+      <div class="rounded-lg border bg-background/60 p-4">
+        <p class="text-xs tracking-[0.2em] text-muted-foreground uppercase">{stat.label}</p>
+        <p class="mt-2 text-3xl leading-none font-black">{stat.value}</p>
+      </div>
+    ))}
+  </div>
+</div>

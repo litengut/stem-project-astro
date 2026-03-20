@@ -1,0 +1,22 @@
+---
+const summaryRows = [
+  { label: "Grand Prix Entered", value: "420" },
+  { label: "Team Points", value: "8300" },
+  { label: "Highest Race Finish", value: "1 (x130)" },
+  { label: "Podiums", value: "233" },
+  { label: "Highest Grid Position", value: "1 (x111)" },
+  { label: "Pole Positions", value: "111" },
+]
+---
+
+<aside class="rounded-2xl border bg-card/95 p-5 md:p-6">
+  <h3 class="text-2xl font-black tracking-tight">Team Summary</h3>
+  <div class="mt-4 divide-y">
+    {summaryRows.map((row) => (
+      <div class="flex items-center justify-between gap-4 py-4">
+        <p class="text-sm text-muted-foreground">{row.label}</p>
+        <p class="text-2xl leading-none font-black">{row.value}</p>
+      </div>
+    ))}
+  </div>
+</aside>

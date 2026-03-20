@@ -1,0 +1,109 @@
+---
+import { Button } from "@/components/ui/button"
+import type { TeamContent } from "@/lib/teams"
+
+type Props = {
+  team: TeamContent
+  teamPrimary: string
+  teamSurface: string
+  carImage?: string
+}
+
+const { team, teamPrimary, teamSurface, carImage } = Astro.props
+const curveId = `team-curve-${team.slug}`
+---
+
+<section
+  class="relative h-[24rem] overflow-hidden rounded-b-[2.25rem] border-b border-white/10 text-white md:h-[28rem]"
+  style={`background-color: ${teamSurface}; --f1-team-primary: ${teamPrimary};`}
+>
+  <!-- that are the gradients i stole them from the f1 websited, I am not smart enoutgh to make them my self-->
+  <div
+    class="absolute inset-0 bg-[radial-gradient(circle_at_12%_12%,rgba(255,255,255,0.16),transparent_35%),linear-gradient(115deg,rgba(255,255,255,0.1),transparent_48%),linear-gradient(180deg,rgba(10,15,30,0.05),rgba(10,15,30,0.82))]"
+  >
+  </div>
+  <div
+    class="absolute -top-24 -right-20 h-64 w-64 rounded-full bg-white/10 blur-3xl"
+  >
+  </div>
+  <div
+    class="absolute -bottom-28 left-14 h-64 w-64 rounded-full bg-[var(--f1-team-primary)]/35 blur-3xl"
+  >
+  </div>
+
+  <div
+    class="relative mx-auto flex h-full max-w-6xl flex-col justify-center px-4 md:px-8"
+  >
+    <div class="grid grid-cols-[0.85fr_1.15fr] items-end gap-4">
+      <div class="space-y-5">
+        <p
+          class="text-xs font-semibold tracking-[0.3em] text-white/70 uppercase"
+        >
+          Constructor Standing
+        </p>
+        <p
+          class="-mb-2 text-7xl font-black tracking-tighter text-white/20 md:text-8xl"
+        >
+          P{team.position}
+        </p>
+        <h1
+          class="max-w-[8ch] text-4xl leading-[0.95] font-black tracking-tight text-balance md:text-6xl"
+        >
+          {team.name}
+        </h1>
+
+        <div class="flex flex-wrap gap-3">
+          <Button
+            variant="secondary"
+            className="bg-white text-black shadow-lg shadow-black/25 hover:bg-white/90"
+          >
+            {team.points} points
+          </Button>
+          <Button
+            variant="outline"
+            className="border-white/35 bg-white/10 text-white hover:bg-white/20"
+          >
+            2026 season
+          </Button>
+        </div>
+      </div>
+
+      {
+        carImage && (
+          <div class="relative lg:-ml-10">
+            {/* This is the curved text behind the car. I asked chatgpt for that, and it works i am surpieds my self */}
+            <svg
+              class="pointer-events-none absolute inset-x-0 top-[28%] h-44 w-full -translate-y-[60%]"
+              viewBox="0 0 1000 220"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path id={curveId} d="M 70 155 Q 500 15 930 155" fill="none" />
+              <text
+                fill="rgba(255,255,255,0.28)"
+                font-size="86"
+                font-weight="800"
+                letter-spacing="7"
+              >
+                <textPath
+                  href={`#${curveId}`}
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  {team.name}
+                </textPath>
+              </text>
+            </svg>
+            {/* please don't aske me about that drop shadow i copied it from somewhere i dont remember where (I lowkey dont understand how they work they are magic to me) */}
+            <img
+              src={carImage}
+              alt={`${team.name} race car`}
+              class="relative z-10 w-full translate-x-8 scale-112 drop-shadow-[0_24px_50px_rgba(0,0,0,0.5)]"
+              loading="eager"
+            />
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>

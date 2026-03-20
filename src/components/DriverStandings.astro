@@ -1,0 +1,31 @@
+---
+import { OpenF1Client } from "openf1-client"
+import { getDriverStandings } from "../fetch"
+import Driver from "./Driver.astro"
+import type { Driver as OpenF1Driver } from "openf1-client/dist/types"
+
+const driverStandings = await getDriverStandings()
+
+console.log(driverStandings)
+
+const client = new OpenF1Client()
+
+// const drivers = await client.getDrivers({}).catch((e) => console.error(e));
+// if (!drivers) {
+//     throw new Error('Failed to fetch drivers')
+// }
+const drivers = (await Bun.file(
+  "./public/drivers.json"
+).json()) as unknown as OpenF1Driver[]
+
+console.log(drivers)
+
+const driverStandingsWithDrivers = driverStandings.map((standings) => ({
+  ...standings,
+  driver: drivers.find((d) => d.driver_number === standings.driver_number),
+}))
+---
+
+<div>
+  {driverStandingsWithDrivers.map((standing) => <Driver standing={standing} />)}
+</div>

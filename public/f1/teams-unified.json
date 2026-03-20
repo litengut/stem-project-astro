@@ -1,0 +1,409 @@
+[
+  {
+    "slug": "mercedes",
+    "name": "Mercedes",
+    "positionStart": 1,
+    "position": 1,
+    "pointsStart": 55,
+    "points": 98,
+    "teamColor": "#00D2BE",
+    "teamSurface": "#082423",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/mercedes/2026mercedescarright.webp",
+    "drivers": [
+      "Kimi Antonelli",
+      "George Russell"
+    ],
+    "roster": [
+      {
+        "driverNumber": 12,
+        "fullName": "Kimi Antonelli",
+        "firstName": "Kimi",
+        "lastName": "Antonelli",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/K/ANDANT01_Kimi_Antonelli/andant01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/mercedes/andant01/2026mercedesandant01right.webp"
+      },
+      {
+        "driverNumber": 63,
+        "fullName": "George Russell",
+        "firstName": "George",
+        "lastName": "Russell",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/mercedes/georus01/2026mercedesgeorus01right.webp"
+      }
+    ],
+    "history": "Mercedes carries one of the deepest lineages in Formula 1. Its original Silver Arrows era in the 1950s built a mythic identity, and its modern factory return in 2010 created a new championship machine defined by engineering precision, operational discipline, and relentless development speed. Through the hybrid era, Mercedes became a reference point for how to run a complete title campaign from winter testing to the final race.",
+    "currentSituation": "In this 2026 standings snapshot, Mercedes leads the constructors' table on 98 points. The combination of George Russell's consistency and Kimi Antonelli's rapid adaptation has created one of the strongest two-car scoring profiles on the grid. The team is converting front-row pace into race-day points with very few low-yield weekends, which is exactly the pattern usually seen in title-winning seasons.",
+    "identity": "Mercedes is defined by system-level execution: simulation quality, setup discipline, strategy clarity, and low operational error rates. The team rarely depends on one heroic result; instead, it builds pressure through repeatable, high-quality weekends.",
+    "outlook": "If Mercedes keeps both drivers in regular podium contention while continuing incremental upgrades, it stays in control of both championships. The biggest challenge will be protecting this advantage across very different circuit types and tire behavior windows."
+  },
+  {
+    "slug": "ferrari",
+    "name": "Ferrari",
+    "positionStart": 2,
+    "position": 2,
+    "pointsStart": 40,
+    "points": 67,
+    "teamColor": "#DC0000",
+    "teamSurface": "#240808",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/ferrari/2026ferraricarright.webp",
+    "drivers": [
+      "Charles Leclerc",
+      "Lewis Hamilton"
+    ],
+    "roster": [
+      {
+        "driverNumber": 16,
+        "fullName": "Charles Leclerc",
+        "firstName": "Charles",
+        "lastName": "Leclerc",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/ferrari/chalec01/2026ferrarichalec01right.webp"
+      },
+      {
+        "driverNumber": 44,
+        "fullName": "Lewis Hamilton",
+        "firstName": "Lewis",
+        "lastName": "Hamilton",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/ferrari/lewham01/2026ferrarilewham01right.webp"
+      }
+    ],
+    "history": "Ferrari is the most iconic constructor in Formula 1 history, with championship eras spread across multiple generations of cars and regulations. Beyond trophies, Ferrari represents a cultural center of the sport, where engineering ambition and public expectation are permanently fused. Every season is judged against title standards, which makes Ferrari both uniquely powerful and uniquely pressured.",
+    "currentSituation": "Ferrari sits second in the current 2026 snapshot with 67 points, staying within striking distance of the lead. Charles Leclerc and Lewis Hamilton have provided elite top-end performance, but the team still needs cleaner conversion on difficult weekends to avoid losing ground. The ceiling is clearly championship level; the key is sustaining it over the full calendar.",
+    "identity": "Ferrari combines major technical resources with an emotionally intense competitive environment. At its best, the team delivers outright pace and race-winning strategy execution under extreme scrutiny.",
+    "outlook": "If Ferrari tightens race-day consistency and minimizes tactical losses, it can keep direct pressure on Mercedes deep into the season. Marginal gains in tire management and decision timing could decide whether this becomes a title fight or a chase."
+  },
+  {
+    "slug": "mclaren",
+    "name": "McLaren",
+    "positionStart": 3,
+    "position": 3,
+    "pointsStart": 18,
+    "points": 18,
+    "teamColor": "#FF8000",
+    "teamSurface": "#251607",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/mclaren/2026mclarencarright.webp",
+    "drivers": [
+      "Lando Norris",
+      "Oscar Piastri"
+    ],
+    "roster": [
+      {
+        "driverNumber": 1,
+        "fullName": "Lando Norris",
+        "firstName": "Lando",
+        "lastName": "Norris",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/mclaren/lannor01/2026mclarenlannor01right.webp"
+      },
+      {
+        "driverNumber": 81,
+        "fullName": "Oscar Piastri",
+        "firstName": "Oscar",
+        "lastName": "Piastri",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/mclaren/oscpia01/2026mclarenoscpia01right.webp"
+      }
+    ],
+    "history": "McLaren is one of Formula 1's cornerstone teams, built on world titles, technical breakthroughs, and major driver legacies. Across decades, the team has repeatedly reinvented itself through regulatory transitions and competitive cycles. Its modern project is centered on restoring sustained front-running status rather than occasional peaks.",
+    "currentSituation": "McLaren is third in this 2026 snapshot with 18 points. The car has shown clear pace in certain windows, but the points return suggests the team has not yet consistently optimized whole weekends. With Norris and Piastri, the lineup is strong enough to capitalize quickly if development direction stabilizes.",
+    "identity": "McLaren's modern identity is iterative and data-heavy, with a strong focus on continuous improvement. It often makes visible gains when it finds a stable setup baseline across varied track characteristics.",
+    "outlook": "A successful upgrade phase could quickly move McLaren from occasional threat to weekly podium contender. The immediate priority is turning flashes of performance into repeatable Sunday results."
+  },
+  {
+    "slug": "haas-f1-team",
+    "name": "Haas F1 Team",
+    "positionStart": 5,
+    "position": 4,
+    "pointsStart": 7,
+    "points": 17,
+    "teamColor": "#9C9FA2",
+    "teamSurface": "#1A1C1F",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/haasf1team/2026haasf1teamcarright.webp",
+    "drivers": [
+      "Esteban Ocon",
+      "Oliver Bearman"
+    ],
+    "roster": [
+      {
+        "driverNumber": 31,
+        "fullName": "Esteban Ocon",
+        "firstName": "Esteban",
+        "lastName": "Ocon",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/haasf1team/estoco01/2026haasf1teamestoco01right.webp"
+      },
+      {
+        "driverNumber": 87,
+        "fullName": "Oliver Bearman",
+        "firstName": "Oliver",
+        "lastName": "Bearman",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/haasf1team/olibea01/2026haasf1teamolibea01right.webp"
+      }
+    ],
+    "history": "Haas entered Formula 1 with a lean, efficiency-first operating model and has spent years building competitiveness against larger organizations. The team has often relied on opportunistic race execution and disciplined resource use to outperform expectations. Its long-term trajectory has been about converting isolated results into sustained midfield strength.",
+    "currentSituation": "Haas is fourth in this 2026 standings snapshot with 17 points, a notably strong return relative to historical baselines. Oliver Bearman's contribution has been significant, and the team has looked sharper in maximizing race opportunities. Maintaining this level over a full season will be the real test.",
+    "identity": "Haas tends to be most dangerous in tactical races where clean calls and low-error operations matter more than pure peak pace. Recent progress suggests improved execution culture across the full weekend.",
+    "outlook": "If Haas protects reliability and keeps qualifying close to the points zone, it can remain in the upper midfield fight. Consistency rather than headline peaks will determine final championship position."
+  },
+  {
+    "slug": "red-bull-racing",
+    "name": "Red Bull Racing",
+    "positionStart": 4,
+    "position": 5,
+    "pointsStart": 8,
+    "points": 12,
+    "teamColor": "#1E5BC6",
+    "teamSurface": "#0A1730",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/redbullracing/2026redbullracingcarright.webp",
+    "drivers": [
+      "Max Verstappen",
+      "Isack Hadjar"
+    ],
+    "roster": [
+      {
+        "driverNumber": 3,
+        "fullName": "Max Verstappen",
+        "firstName": "Max",
+        "lastName": "Verstappen",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/redbullracing/maxver01/2026redbullracingmaxver01right.webp"
+      },
+      {
+        "driverNumber": 6,
+        "fullName": "Isack Hadjar",
+        "firstName": "Isack",
+        "lastName": "Hadjar",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/redbullracing/isahad01/2026redbullracingisahad01right.webp"
+      }
+    ],
+    "history": "Red Bull Racing evolved from ambitious entrant to one of the defining powers of modern Formula 1. Its championship identity has been built on aggressive innovation, aerodynamic excellence, and a high-performance development culture that expects wins, not just points. The team has repeatedly shaped entire eras of competition.",
+    "currentSituation": "In this snapshot, Red Bull is fifth with 12 points, which is below usual expectations. The raw pace potential remains visible, but results have been uneven and not fully representative of the team's historical level. Closing the gap will require stronger two-car execution and more consistent race outcomes.",
+    "identity": "Red Bull is known for chasing absolute car performance and making bold technical decisions. When it finds the right setup window, it can transform competitiveness very quickly.",
+    "outlook": "A stable run of clean weekends could trigger a rapid standings climb. With Verstappen's ceiling and Hadjar's growth curve, the team is still a high-upside factor in the championship narrative."
+  },
+  {
+    "slug": "racing-bulls",
+    "name": "Racing Bulls",
+    "positionStart": 6,
+    "position": 6,
+    "pointsStart": 6,
+    "points": 12,
+    "teamColor": "#6C98FF",
+    "teamSurface": "#101D35",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/racingbulls/2026racingbullscarright.webp",
+    "drivers": [
+      "Liam Lawson",
+      "Arvid Lindblad"
+    ],
+    "roster": [
+      {
+        "driverNumber": 30,
+        "fullName": "Liam Lawson",
+        "firstName": "Liam",
+        "lastName": "Lawson",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/racingbulls/lialaw01/2026racingbullslialaw01right.webp"
+      },
+      {
+        "driverNumber": 41,
+        "fullName": "Arvid Lindblad",
+        "firstName": "Arvid",
+        "lastName": "Lindblad",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/racingbulls/arvlin01/2026racingbullsarvlin01right.webp"
+      }
+    ],
+    "history": "Racing Bulls continues the long Red Bull junior-team model: develop young talent while competing aggressively in the midfield. Over time, the structure has produced multiple future stars and remains one of the sport's most important development pathways.",
+    "currentSituation": "Racing Bulls is sixth in this 2026 snapshot on 12 points. Lawson and Lindblad have shown useful pace and delivered practical points in a tightly packed midfield. The team has looked adaptable, especially when race conditions become dynamic.",
+    "identity": "The team blends development goals with real competitive intent, often prioritizing learning speed and execution quality. It performs best when drivers and engineers can iterate rapidly through a weekend.",
+    "outlook": "If the lineup keeps improving qualifying positions, Racing Bulls can convert its current consistency into bigger points hauls. Holding sixth or better is realistic with continued clean execution."
+  },
+  {
+    "slug": "alpine",
+    "name": "Alpine",
+    "positionStart": 8,
+    "position": 7,
+    "pointsStart": 1,
+    "points": 10,
+    "teamColor": "#00A1E8",
+    "teamSurface": "#081F30",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/alpine/2026alpinecarright.webp",
+    "drivers": [
+      "Pierre Gasly",
+      "Franco Colapinto"
+    ],
+    "roster": [
+      {
+        "driverNumber": 10,
+        "fullName": "Pierre Gasly",
+        "firstName": "Pierre",
+        "lastName": "Gasly",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/alpine/piegas01/2026alpinepiegas01right.webp"
+      },
+      {
+        "driverNumber": 43,
+        "fullName": "Franco Colapinto",
+        "firstName": "Franco",
+        "lastName": "Colapinto",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/alpine/fracol01/2026alpinefracol01right.webp"
+      }
+    ],
+    "history": "Alpine carries the works-team lineage of Renault in Formula 1, including a long history of technical involvement and championship ambition. The modern project has aimed to bridge the gap between midfield performance and true front-running consistency.",
+    "currentSituation": "Alpine sits seventh in this snapshot with 10 points. Pierre Gasly has supplied key scoring drives while the team seeks a cleaner, more reliable performance envelope across different circuits. The baseline is competitive enough to fight for regular points, but not yet stable enough for sustained upward momentum.",
+    "identity": "Alpine's competitive character is built on balanced setup direction, strategic discipline, and step-by-step development rather than dramatic swings. At its best, it executes tidy weekends and maximizes available performance.",
+    "outlook": "If Alpine improves tire behavior on high-degradation Sundays and qualifies closer to the top ten more often, it can challenge teams ahead in the constructors standings."
+  },
+  {
+    "slug": "audi",
+    "name": "Audi",
+    "positionStart": 7,
+    "position": 8,
+    "pointsStart": 2,
+    "points": 2,
+    "teamColor": "#F50537",
+    "teamSurface": "#2A0A12",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/audi/2026audicarright.webp",
+    "drivers": [
+      "Gabriel Bortoleto",
+      "Nico Hulkenberg"
+    ],
+    "roster": [
+      {
+        "driverNumber": 5,
+        "fullName": "Gabriel Bortoleto",
+        "firstName": "Gabriel",
+        "lastName": "Bortoleto",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/audi/gabbor01/2026audigabbor01right.webp"
+      },
+      {
+        "driverNumber": 27,
+        "fullName": "Nico Hulkenberg",
+        "firstName": "Nico",
+        "lastName": "Hulkenberg",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/audi/nichul01/2026audinichul01right.webp"
+      }
+    ],
+    "history": "Audi's arrival marks a major manufacturer entry in a new Formula 1 era. With a strong global motorsport pedigree, the project begins with high expectations but also the normal complexity of building a full works operation from the ground up.",
+    "currentSituation": "Audi is eighth in this 2026 snapshot with 2 points. Early-season form suggests moments of promise, but the larger challenge is establishing repeatable race-day competitiveness across the calendar. The team appears to be in a structured build phase focused on reliability and operational cohesion.",
+    "identity": "Audi's early identity is process-first: establish robust foundations, scale performance steadily, and avoid overreactive development cycles. The blend of rookie potential and veteran feedback is central to that plan.",
+    "outlook": "The middle third of the season will be critical for measuring trajectory. Consistent incremental gains and cleaner weekends would signal a healthy long-term project path."
+  },
+  {
+    "slug": "williams",
+    "name": "Williams",
+    "positionStart": 9,
+    "position": 9,
+    "pointsStart": 0,
+    "points": 2,
+    "teamColor": "#1868DB",
+    "teamSurface": "#0A1B3A",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/williams/2026williamscarright.webp",
+    "drivers": [
+      "Alexander Albon",
+      "Carlos Sainz"
+    ],
+    "roster": [
+      {
+        "driverNumber": 23,
+        "fullName": "Alexander Albon",
+        "firstName": "Alexander",
+        "lastName": "Albon",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/williams/alealb01/2026williamsalealb01right.webp"
+      },
+      {
+        "driverNumber": 55,
+        "fullName": "Carlos Sainz",
+        "firstName": "Carlos",
+        "lastName": "Sainz",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/williams/carsai01/2026williamscarsai01right.webp"
+      }
+    ],
+    "history": "Williams is one of Formula 1's great historic constructors, with multiple championship eras that shaped the sport. In recent years, the team has focused on rebuilding technical depth, infrastructure, and long-term competitiveness.",
+    "currentSituation": "Williams is ninth in this standings snapshot with 2 points. The underlying pace has appeared in brief windows, but the team needs more complete weekends to convert potential into regular scoring finishes. With Albon and Sainz, it has a lineup capable of exploiting any step forward quickly.",
+    "identity": "Williams currently reflects disciplined rebuilding: improving processes, reducing variability, and targeting steady progression rather than short-lived spikes. It is a team trying to re-establish a durable competitive base.",
+    "outlook": "If development upgrades deliver the expected lift, Williams can move into a stronger midfield position. The immediate target is increased scoring frequency and cleaner race execution under pressure."
+  },
+  {
+    "slug": "cadillac",
+    "name": "Cadillac",
+    "positionStart": 10,
+    "position": 10,
+    "pointsStart": 0,
+    "points": 0,
+    "teamColor": "#909090",
+    "teamSurface": "#1A1A1A",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/cadillac/2026cadillaccarright.webp",
+    "drivers": [
+      "Sergio Perez",
+      "Valtteri Bottas"
+    ],
+    "roster": [
+      {
+        "driverNumber": 11,
+        "fullName": "Sergio Perez",
+        "firstName": "Sergio",
+        "lastName": "Perez",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/cadillac/serper01/2026cadillacserper01right.webp"
+      },
+      {
+        "driverNumber": 77,
+        "fullName": "Valtteri Bottas",
+        "firstName": "Valtteri",
+        "lastName": "Bottas",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/cadillac/valbot01/2026cadillacvalbot01right.webp"
+      }
+    ],
+    "history": "Cadillac's Formula 1 presence reflects the championship's expanding global and North American relevance. As a newer project, its competitive identity is still forming, with early seasons focused on building technical capacity and race-operations confidence.",
+    "currentSituation": "Cadillac is tenth in this 2026 snapshot with 0 points. The team is in a classic early-stage phase, balancing reliability work, setup learning, and race execution development. Experienced drivers provide a strong foundation, but results have not yet converted into points.",
+    "identity": "Cadillac's current profile is growth-oriented and methodical, centered on establishing stable performance processes before chasing larger strategic risks.",
+    "outlook": "The first points finish can become a major psychological and operational milestone. Once that barrier is cleared, momentum and confidence often accelerate team progress."
+  },
+  {
+    "slug": "aston-martin",
+    "name": "Aston Martin",
+    "positionStart": 11,
+    "position": 11,
+    "pointsStart": 0,
+    "points": 0,
+    "teamColor": "#229971",
+    "teamSurface": "#0C1E19",
+    "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/astonmartin/2026astonmartincarright.webp",
+    "drivers": [
+      "Fernando Alonso",
+      "Lance Stroll"
+    ],
+    "roster": [
+      {
+        "driverNumber": 14,
+        "fullName": "Fernando Alonso",
+        "firstName": "Fernando",
+        "lastName": "Alonso",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/astonmartin/feralo01/2026astonmartinferalo01right.webp"
+      },
+      {
+        "driverNumber": 18,
+        "fullName": "Lance Stroll",
+        "firstName": "Lance",
+        "lastName": "Stroll",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
+        "portraitUrl": "https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/astonmartin/lanstr01/2026astonmartinlanstr01right.webp"
+      }
+    ],
+    "history": "Aston Martin's modern team structure evolved from Racing Point and has pursued a long-term path toward front-running status through major investment and infrastructure expansion. The project has shown high peaks in recent years but continues to seek stable, title-level consistency.",
+    "currentSituation": "Aston Martin is eleventh in this 2026 snapshot with 0 points, a difficult start relative to ambition and experience. The team has shown isolated competitive moments, but race-day conversion has been weak. Resetting setup confidence and tire management is a near-term priority.",
+    "identity": "Aston Martin combines long-horizon strategic investment with immediate pressure to deliver on-track progress. Its challenge is aligning growing technical resources with dependable weekly execution.",
+    "outlook": "If it finds a broader operating window across different track types, points should begin to come consistently. With Alonso and Stroll, the team has enough experience to recover quickly once baseline performance improves."
+  }
+]

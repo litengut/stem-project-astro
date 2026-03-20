@@ -1,0 +1,42 @@
+---
+import Layout from "@/layouts/main.astro"
+import { loadTeams } from "@/lib/teams"
+import TeamHero from "@/components/team/TeamHero.astro"
+
+import TeamDriversSection from "@/components/team/TeamDriversSection.astro"
+import TeamStatisticsSection from "@/components/team/TeamStatisticsSection.astro"
+import TeamInfoGrid from "@/components/team/TeamInfoGrid.astro"
+
+export async function getStaticPaths() {
+  const teams = await loadTeams()
+  return teams.map((team) => ({ params: { name: team.slug } }))
+}
+
+const { name } = Astro.params
+const teams = await loadTeams()
+const team = teams.find((item) => item.slug === name)
+
+if (!team) {
+  throw new Error(`Team not found for slug: ${name}`)
+}
+
+const teamPrimary = team.teamColor ?? "#1f2937"
+const teamSurface = team.teamSurface ?? "#101828"
+---
+
+<Layout>
+  <main class="min-h-screen bg-background text-foreground">
+    <TeamHero
+      team={team}
+      teamPrimary={teamPrimary}
+      teamSurface={teamSurface}
+      carImage={team.carImage}
+    />
+    <!-- <TeamDriversSection
+      teamName={team.name}
+      teamDrivers={team.roster}
+      teamPrimary={teamPrimary}
+    />
+    <TeamStatisticsSection team={team} /> -->
+  </main>
+</Layout>

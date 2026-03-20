@@ -1,0 +1,30 @@
+---
+type DriverStatsData = {
+  position: number
+  points: number
+  pointsGap: number
+}
+
+type Props = {
+  driver: DriverStatsData
+}
+
+const { driver } = Astro.props
+---
+
+<section class="mx-auto max-w-6xl px-4 py-10">
+  <div class="grid grid-cols-3 gap-4">
+    <article class="rounded-2xl border border-border bg-card p-5">
+      <p class="text-xs tracking-[0.2em] text-muted-foreground uppercase">Position</p>
+      <p class="mt-2 text-4xl font-black tracking-tight">P{driver.position}</p>
+    </article>
+    <article class="rounded-2xl border border-border bg-card p-5">
+      <p class="text-xs tracking-[0.2em] text-muted-foreground uppercase">Points</p>
+      <p class="mt-2 text-4xl font-black tracking-tight">{driver.points}</p>
+    </article>
+    <article class="rounded-2xl border border-border bg-card p-5">
+      <p class="text-xs tracking-[0.2em] text-muted-foreground uppercase">Gap to Leader</p>
+      <p class="mt-2 text-4xl font-black tracking-tight">{driver.pointsGap}</p>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+---
+interface Props {
+  position: number
+}
+
+const { position } = Astro.props
+---
+
+{
+  position === 1 ? (
+    <span class="text-gold" aria-label="1st place" title="1st place">
+      🏆
+    </span>
+  ) : position === 2 ? (
+    <span class="text-silver" aria-label="2nd place" title="2nd place">
+      🥈
+    </span>
+  ) : position === 3 ? (
+    <span class="text-bronze" aria-label="3rd place" title="3rd place">
+      🥉
+    </span>
+  ) : (
+    <span class="font-display text-sm text-muted-foreground">{position}</span>
+  )
+}
