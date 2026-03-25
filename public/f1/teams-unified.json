@@ -8,6 +8,7 @@
     "points": 98,
     "teamColor": "#00D2BE",
     "teamSurface": "#082423",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/mercedes/2026mercedeslogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/mercedes/2026mercedescarright.webp",
     "drivers": [
       "Kimi Antonelli",
@@ -45,6 +46,7 @@
     "points": 67,
     "teamColor": "#DC0000",
     "teamSurface": "#240808",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/ferrari/2026ferrarilogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/ferrari/2026ferraricarright.webp",
     "drivers": [
       "Charles Leclerc",
@@ -82,6 +84,7 @@
     "points": 18,
     "teamColor": "#FF8000",
     "teamSurface": "#251607",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/mclaren/2026mclarenlogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/mclaren/2026mclarencarright.webp",
     "drivers": [
       "Lando Norris",
@@ -119,6 +122,7 @@
     "points": 17,
     "teamColor": "#9C9FA2",
     "teamSurface": "#1A1C1F",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/haasf1team/2026haasf1teamlogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/haasf1team/2026haasf1teamcarright.webp",
     "drivers": [
       "Esteban Ocon",
@@ -156,6 +160,7 @@
     "points": 12,
     "teamColor": "#1E5BC6",
     "teamSurface": "#0A1730",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/redbullracing/2026redbullracinglogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/redbullracing/2026redbullracingcarright.webp",
     "drivers": [
       "Max Verstappen",
@@ -193,6 +198,7 @@
     "points": 12,
     "teamColor": "#6C98FF",
     "teamSurface": "#101D35",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/racingbulls/2026racingbullslogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/racingbulls/2026racingbullscarright.webp",
     "drivers": [
       "Liam Lawson",
@@ -230,6 +236,7 @@
     "points": 10,
     "teamColor": "#00A1E8",
     "teamSurface": "#081F30",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/alpine/2026alpinelogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/alpine/2026alpinecarright.webp",
     "drivers": [
       "Pierre Gasly",
@@ -267,6 +274,7 @@
     "points": 2,
     "teamColor": "#F50537",
     "teamSurface": "#2A0A12",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/audi/2026audilogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/audi/2026audicarright.webp",
     "drivers": [
       "Gabriel Bortoleto",
@@ -304,6 +312,7 @@
     "points": 2,
     "teamColor": "#1868DB",
     "teamSurface": "#0A1B3A",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/williams/2026williamslogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/williams/2026williamscarright.webp",
     "drivers": [
       "Alexander Albon",
@@ -341,6 +350,7 @@
     "points": 0,
     "teamColor": "#909090",
     "teamSurface": "#1A1A1A",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/cadillac/2026cadillaclogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/cadillac/2026cadillaccarright.webp",
     "drivers": [
       "Sergio Perez",
@@ -378,6 +388,7 @@
     "points": 0,
     "teamColor": "#229971",
     "teamSurface": "#0C1E19",
+    "teamLogo": "https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/astonmartin/2026astonmartinlogowhite.webp",
     "carImage": "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000001/common/f1/2026/astonmartin/2026astonmartincarright.webp",
     "drivers": [
       "Fernando Alonso",

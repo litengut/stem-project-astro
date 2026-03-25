@@ -1,5 +1,6 @@
 ---
 import { TopBar } from "@/components/TopBar"
+import { TooltipProvider } from "@/components/ui/tooltip"
 import "@/styles/global.css"
 ---
 
@@ -37,6 +38,8 @@ import "@/styles/global.css"
   </head>
   <body>
     <TopBar client:load />
-    <slot />
+    <TooltipProvider client:load>
+      <slot />
+    </TooltipProvider>
   </body>
 </html>
