@@ -1,6 +1,5 @@
 import * as React from "react"
 
-import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
@@ -8,25 +7,33 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import type { F1NewsItem } from "@/lib/f1-news"
+import { NewsCard } from "./Newscard"
 
-export function CarouselDemo() {
+type Props = {
+  items: F1NewsItem[]
+}
+
+export function NewsCarousel({ items }: Props) {
   return (
-    <Carousel className="w-full max-w-[12rem] sm:max-w-xs">
+    <Carousel
+      className="w-full max-w-[76rem] px-10"
+      opts={{ align: "start", loop: true }}
+    >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
+        {items.map((item) => (
+          <CarouselItem
+            key={item.link}
+            className="basis-full sm:basis-1/2 lg:basis-1/3"
+          >
+            <div className="p-1.5">
+              <NewsCard news={item}></NewsCard>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="left-0" />
+      <CarouselNext className="right-0" />
     </Carousel>
   )
 }

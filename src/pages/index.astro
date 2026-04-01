@@ -8,9 +8,12 @@ import heroBg from "../../public/2026_Explainer_FIA_Front_3_4_1920x1080.avif"
 import SmallDriverTable from "@/components/standing/driver/small-driver-table.astro"
 import TeamDriverTable from "@/components/standing/team/small-team-table.astro"
 import { Image } from "astro:assets"
+import { NewsCarousel } from "@/components/news-carousel"
+import { getF1LatestNews } from "@/lib/f1-news"
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const f1News = await getF1LatestNews(9)
 ---
 
 <Layout>
@@ -43,6 +46,9 @@ import { Image } from "astro:assets"
       <!-- <div class="flex"> -->
 
       <!-- </div> -->
+    </div>
+    <div class="mx-auto mt-6 flex w-full max-w-7xl justify-center px-4">
+      <NewsCarousel items={f1News} client:load />
     </div>
     <div class="mr-[12%] ml-[12%] flex gap-10">
       <div><SmallDriverTable /></div>

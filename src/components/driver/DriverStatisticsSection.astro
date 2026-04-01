@@ -1,0 +1,84 @@
+---
+import type {
+  DriverCareerStats,
+  DriverPageData,
+  DriverSeasonStats,
+} from "@/lib/drivers"
+import SummaryCard from "@/components/SummaryCard.astro"
+import StatsGrid from "@/components/StatsGrid.astro"
+
+type Props = {
+  driver: DriverPageData
+}
+
+const { driver } = Astro.props
+
+const seasonStats: DriverSeasonStats = driver.seasonStats2026 ?? {
+  seasonPosition: `${driver.position}`,
+  seasonPoints: driver.points,
+  grandPrixRaces: 0,
+  grandPrixPoints: 0,
+  grandPrixWins: 0,
+  grandPrixPodiums: 0,
+  grandPrixPoles: 0,
+  grandPrixTop10s: 0,
+  dhlFastestLaps: 0,
+  dnfs: 0,
+  sprintRaces: 0,
+  sprintPoints: 0,
+  sprintWins: 0,
+  sprintPodiums: 0,
+  sprintPoles: 0,
+  sprintTop10s: 0,
+}
+
+const careerStats: DriverCareerStats = driver.careerStats ?? {
+  grandPrixEntered: 0,
+  careerPoints: 0,
+  highestRaceFinish: "-",
+  podiums: 0,
+  highestGridPosition: "-",
+  polePositions: 0,
+  worldChampionships: 0,
+  dnfs: 0,
+}
+
+const seasonRows = [
+  { label: "Season Position", value: seasonStats.seasonPosition },
+  { label: "Season Points", value: `${seasonStats.seasonPoints}` },
+  { label: "Grand Prix Races", value: `${seasonStats.grandPrixRaces}` },
+  { label: "Grand Prix Points", value: `${seasonStats.grandPrixPoints}` },
+  { label: "Grand Prix Wins", value: `${seasonStats.grandPrixWins}` },
+  { label: "Grand Prix Podiums", value: `${seasonStats.grandPrixPodiums}` },
+  { label: "Grand Prix Poles", value: `${seasonStats.grandPrixPoles}` },
+  { label: "Grand Prix Top 10s", value: `${seasonStats.grandPrixTop10s}` },
+  { label: "DHL Fastest Laps", value: `${seasonStats.dhlFastestLaps}` },
+  { label: "DNFs", value: `${seasonStats.dnfs}` },
+  { label: "Sprint Races", value: `${seasonStats.sprintRaces}` },
+  { label: "Sprint Points", value: `${seasonStats.sprintPoints}` },
+  { label: "Sprint Wins", value: `${seasonStats.sprintWins}` },
+  { label: "Sprint Podiums", value: `${seasonStats.sprintPodiums}` },
+  { label: "Sprint Poles", value: `${seasonStats.sprintPoles}` },
+  { label: "Sprint Top 10s", value: `${seasonStats.sprintTop10s}` },
+]
+
+const summaryRows = [
+  { label: "Grand Prix Entered", value: `${careerStats.grandPrixEntered}` },
+  { label: "Career Points", value: `${careerStats.careerPoints}` },
+  { label: "Highest Race Finish", value: careerStats.highestRaceFinish },
+  { label: "Podiums", value: `${careerStats.podiums}` },
+  { label: "Highest Grid Position", value: careerStats.highestGridPosition },
+  { label: "Pole Positions", value: `${careerStats.polePositions}` },
+  { label: "World Championships", value: `${careerStats.worldChampionships}` },
+  { label: "DNFs", value: `${careerStats.dnfs}` },
+]
+---
+
+<section class="mx-auto max-w-6xl px-4 py-8 md:px-8 md:py-10">
+  <h2 class="text-4xl font-black tracking-tight">Statistics</h2>
+
+  <div class="mt-6 grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+    <StatsGrid title="2026 Season" rows={seasonRows} />
+    <SummaryCard title="Career Stats" rows={summaryRows} />
+  </div>
+</section>

@@ -4,6 +4,42 @@ import path from "node:path"
 import type { DriverStanding } from "@/fetch"
 import type { Driver as OpenF1Driver } from "openf1-client/dist/types"
 
+export type DriverSeasonStats = {
+  seasonPosition: string
+  seasonPoints: number
+  grandPrixRaces: number
+  grandPrixPoints: number
+  grandPrixWins: number
+  grandPrixPodiums: number
+  grandPrixPoles: number
+  grandPrixTop10s: number
+  dhlFastestLaps: number
+  dnfs: number
+  sprintRaces: number
+  sprintPoints: number
+  sprintWins: number
+  sprintPodiums: number
+  sprintPoles: number
+  sprintTop10s: number
+}
+
+export type DriverCareerStats = {
+  grandPrixEntered: number
+  careerPoints: number
+  highestRaceFinish: string
+  podiums: number
+  highestGridPosition: string
+  polePositions: number
+  worldChampionships: number
+  dnfs: number
+}
+
+type DriverStatsContent = {
+  slug: string
+  seasonStats2026: DriverSeasonStats
+  careerStats: DriverCareerStats
+}
+
 export type DriverPageData = {
   slug: string
   firstName: string
@@ -17,6 +53,8 @@ export type DriverPageData = {
   position: number
   points: number
   pointsGap: number
+  seasonStats2026?: DriverSeasonStats
+  careerStats?: DriverCareerStats
 }
 
 const teamAssetSlugByName: Record<string, string> = {
@@ -56,6 +94,12 @@ export async function getDriverPageData(): Promise<DriverPageData[]> {
     "driver_standings.json"
   )
   const driversPath = path.join(process.cwd(), "public", "drivers.json")
+  const driversStatsPath = path.join(
+    process.cwd(),
+    "public",
+    "f1",
+    "drivers-stats.json"
+  )
 
   const driverStandings = JSON.parse(
     await readFile(driverStandingsPath, "utf-8")
@@ -63,6 +107,11 @@ export async function getDriverPageData(): Promise<DriverPageData[]> {
   const drivers = JSON.parse(
     await readFile(driversPath, "utf-8")
   ) as OpenF1Driver[]
+  const driversStats = JSON.parse(
+    await readFile(driversStatsPath, "utf-8")
+  ) as DriverStatsContent[]
+
+  const statsBySlug = new Map(driversStats.map((entry) => [entry.slug, entry]))
 
   const driverPages = driverStandings
     .map((standing) => {
@@ -73,9 +122,11 @@ export async function getDriverPageData(): Promise<DriverPageData[]> {
 
       const fullName = `${driver.first_name} ${driver.last_name}`
       const points = Number(standing.points_current)
+      const slug = slugify(fullName)
+      const extraStats = statsBySlug.get(slug)
 
       return {
-        slug: slugify(fullName),
+        slug,
         firstName: driver.first_name,
         lastName: driver.last_name,
         fullName,
@@ -86,11 +137,15 @@ export async function getDriverPageData(): Promise<DriverPageData[]> {
         portraitUrl: getPortraitUrl(driver.team_name, driver.headshot_url),
         position: standing.position_current,
         points,
+        ...(extraStats?.seasonStats2026
+          ? { seasonStats2026: extraStats.seasonStats2026 }
+          : {}),
+        ...(extraStats?.careerStats
+          ? { careerStats: extraStats.careerStats }
+          : {}),
       }
     })
-    .filter((entry): entry is Omit<DriverPageData, "pointsGap"> =>
-      Boolean(entry)
-    )
+    .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
     .sort((a, b) => a.position - b.position)
 
   const leaderPoints = driverPages[0]?.points ?? 0
