@@ -18,6 +18,7 @@ export type DriverStandingRow = {
   number: number
   points: number
   form: FormStatus[]
+  image: string
 }
 
 export type TeamStandingRow = {

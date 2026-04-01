@@ -1,5 +1,6 @@
 ---
 import type { TeamContent } from "@/lib/teams"
+import StatsGrid from "../StatsGrid.astro"
 
 type Props = {
   team: TeamContent
@@ -22,14 +23,4 @@ const stats = [
 ]
 ---
 
-<div class="rounded-2xl border bg-card p-5 md:p-6">
-  <h3 class="text-2xl font-black tracking-tight">2026 Season</h3>
-  <div class="mt-5 grid gap-4 sm:grid-cols-2">
-    {stats.map((stat) => (
-      <div class="rounded-lg border bg-background/60 p-4">
-        <p class="text-xs tracking-[0.2em] text-muted-foreground uppercase">{stat.label}</p>
-        <p class="mt-2 text-3xl leading-none font-black">{stat.value}</p>
-      </div>
-    ))}
-  </div>
-</div>
+<StatsGrid title="2026 Season" rows={stats} />

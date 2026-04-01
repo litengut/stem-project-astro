@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 const { driver } = Astro.props as { driver: DriverPageData }
 
 if (!driver) {
-  throw new Error(`Driver page missing for slug: ${Astro.params.name}`)
+  throw new Error(`Missing: ${Astro.params.name}`)
 }
 ---
 

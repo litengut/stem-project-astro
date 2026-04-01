@@ -17,22 +17,28 @@ export function DriversMenu({ driverLinks }: Props) {
         Drivers
       </NavigationMenuTrigger>
       <NavigationMenuContent>
-        <ul className="grid w-65 gap-1 p-2">
+        <ul className="grid grid-cols-4 gap-1 p-2">
           {driverLinks.map((driver) => (
             <li key={driver.href}>
               <NavigationMenuLink
                 render={
                   <a
-                    className="rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
+                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium hover:bg-muted"
                     href={driver.href}
                   >
-                    {driver.title}
+                    <img
+                      src={driver.image}
+                      alt={driver.title}
+                      className="h-10 w-10 rounded-full object-cover object-top"
+                      loading="lazy"
+                    />
+                    <span>{driver.title}</span>
                   </a>
                 }
               />
             </li>
           ))}
-          <li>
+          {/* <li>
             <NavigationMenuLink
               render={
                 <a
@@ -43,7 +49,7 @@ export function DriversMenu({ driverLinks }: Props) {
                 </a>
               }
             />
-          </li>
+          </li> */}
         </ul>
       </NavigationMenuContent>
     </NavigationMenuItem>

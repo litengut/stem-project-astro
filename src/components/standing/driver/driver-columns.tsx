@@ -4,8 +4,9 @@ import type { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Form } from "./Formstatus"
-import type { DriverStandingRow } from "./types"
+import { Form } from "../Formstatus"
+import type { DriverStandingRow } from "../types"
+import { makeLinkFromName } from "@/components/navigation/nav-data"
 
 export const driverColumns: ColumnDef<DriverStandingRow>[] = [
   {
@@ -26,22 +27,38 @@ export const driverColumns: ColumnDef<DriverStandingRow>[] = [
     },
   },
   {
-    accessorKey: "driver",
-    header: "Driver",
+    accessorKey: "image",
+    header: "image",
     meta: {
-      className: "w-[16rem]",
+      className: "w-20",
+    },
+    cell: ({ row }) => {
+      const driver = row.original
+      return (
+        <img
+          src={driver.image}
+          alt={`${driver.team} logo`}
+          className="ml-auto h-8 w-8 rounded-full object-cover object-top"
+          loading="lazy"
+        />
+      )
     },
   },
   {
-    accessorKey: "team",
-    header: "Team",
+    accessorKey: "driver",
+    header: "Driver",
     meta: {
-      className: "w-[14rem]",
+      className: "w-[10rem] flex",
+    },
+
+    cell: ({ row }) => {
+      const link = makeLinkFromName(row.original.driver, "driver")
+      return <a href={link}>{row.original.driver}</a>
     },
   },
   {
     accessorKey: "teamLogo",
-    header: "Logo",
+    header: "",
     meta: {
       className: "w-20",
     },
@@ -51,10 +68,17 @@ export const driverColumns: ColumnDef<DriverStandingRow>[] = [
         <img
           src={driver.teamLogo}
           alt={`${driver.team} logo`}
-          className="h-8 w-8 rounded object-contain"
+          className="ml-auto h-8 w-8 rounded object-contain"
           loading="lazy"
         />
       )
+    },
+  },
+  {
+    accessorKey: "team",
+    header: "Team",
+    meta: {
+      className: "w-[14rem]",
     },
   },
   {
@@ -78,7 +102,7 @@ export const driverColumns: ColumnDef<DriverStandingRow>[] = [
     },
   },
   {
-    accessorKey: "FormStatus",
+    accessorKey: "formStatus",
     header: "Status",
     meta: {
       className: "w-40",

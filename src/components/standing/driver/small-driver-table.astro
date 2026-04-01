@@ -1,0 +1,9 @@
+---
+import { getStandingsPageData } from "../data"
+
+import { SmallDriverTable as Table } from "./small-driver-table"
+const { drivers } = await getStandingsPageData()
+---
+
+<!-- <DemoPage data={data} client:load /> -->
+<Table drivers={drivers} client:load />

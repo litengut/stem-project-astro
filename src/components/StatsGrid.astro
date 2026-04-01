@@ -1,0 +1,24 @@
+---
+type Props = {
+  title: string
+  rows: {
+    label: string
+    value: string
+  }[]
+}
+const { rows, title } = Astro.props
+---
+
+<div class="rounded-2xl border bg-card p-5 md:p-6">
+  <h3 class="text-2xl font-black">{title}</h3>
+  <div class="mt-5 grid gap-4 sm:grid-cols-2">
+    {
+      rows.map((row) => (
+        <div class="rounded-lg border bg-background/60 p-4">
+          <p class="text-xs text-muted-foreground uppercase">{row.label}</p>
+          <p class="mt-2 text-3xl font-black">{row.value}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>

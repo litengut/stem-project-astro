@@ -1,5 +1,5 @@
-import { columns } from "./team-columns"
-import { driverColumns } from "./driver-columns"
+import { columns } from "./team/team-columns"
+import { driverColumns } from "./driver/driver-columns"
 import { type StandingsPageData } from "./types"
 import { DataTable } from "./data-table"
 

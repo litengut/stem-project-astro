@@ -16,9 +16,10 @@ type Props = {
 const { driver } = Astro.props
 ---
 
+{/* I change a little bit of the gradiant but I didn't write it my */}
 <section
-  class="relative h-[28rem] overflow-hidden rounded-b-[2.25rem] border-b border-white/10 text-white"
-  style={`--driver-team-color: ${driver.teamColor}; background: linear-gradient(130deg, #0b0d12 0%, color-mix(in srgb, ${driver.teamColor} 30%, #0b0d12 70%) 42%, #0a0a0a 100%);`}
+  class="relative h-112 overflow-hidden rounded-b-[2.25rem] border-b border-white/10 text-white"
+  style={`background: linear-gradient(130deg, #0b0d12 0%, color-mix(in srgb, ${driver.teamColor} 30%, #0b0d12 70%) 42%, #0a0a0a 100%);`}
 >
   <div
     class="absolute inset-0 bg-[radial-gradient(circle_at_22%_20%,rgba(255,255,255,0.12),transparent_45%)]"
@@ -33,7 +34,9 @@ const { driver } = Astro.props
       >
         Driver Profile
       </p>
-      <h1 class="mt-3 max-w-[8ch] text-6xl leading-[0.95] font-black tracking-tight text-balance">
+      <h1
+        class="mt-3 max-w-[8ch] text-6xl leading-[0.95] font-black tracking-tight text-balance"
+      >
         {driver.firstName}
         <br />
         {driver.lastName}

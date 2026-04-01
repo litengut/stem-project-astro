@@ -4,8 +4,8 @@ import type { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import type { TeamStandingRow } from "./types"
-import { Form } from "./Formstatus"
+import type { TeamStandingRow } from "../types"
+import { Form } from "../Formstatus"
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -51,6 +51,26 @@ export const columns: ColumnDef<TeamStandingRow>[] = [
     header: "Team Name",
     meta: {
       className: "w-[5rem]",
+    },
+  },
+  {
+    accessorKey: "wins",
+    header: "Wins",
+    meta: {
+      className: "w-10 text-right",
+    },
+    cell: ({ row }) => {
+      return <div className="text-right">{row.original.wins}</div>
+    },
+  },
+  {
+    accessorKey: "podiums",
+    header: "Podiums",
+    meta: {
+      className: "w-10 text-right",
+    },
+    cell: ({ row }) => {
+      return <div className="text-right">{row.original.podiums}</div>
     },
   },
   {

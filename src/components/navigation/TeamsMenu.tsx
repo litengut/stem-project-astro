@@ -23,7 +23,7 @@ export function TeamsMenu({ teamLinks }: Props) {
               <NavigationMenuLink render={<Preview team={team}></Preview>} />
             </li>
           ))}
-          <li className="col-span-4">
+          {/* <li className="col-span-4">
             <NavigationMenuLink
               render={
                 <a
@@ -34,7 +34,7 @@ export function TeamsMenu({ teamLinks }: Props) {
                 </a>
               }
             />
-          </li>
+          </li> */}
         </ul>
       </NavigationMenuContent>
     </NavigationMenuItem>

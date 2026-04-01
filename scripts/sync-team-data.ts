@@ -20,6 +20,24 @@ type DriverApi = {
   headshot_url: string
 }
 
+type DriverStandingRow = {
+  meeting_key: number
+  session_key: number
+  driver_number: number
+  position_start: number
+  position_current: number
+  points_start: number
+  points_current: number
+  image?: string | null
+}
+
+type TeamUnified = {
+  slug: string
+  name: string
+  position: number
+  carImage?: string
+}
+
 type SessionInfo = {
   session_key: number
   circuit_short_name: string
@@ -102,7 +120,11 @@ const buildTeamLogoUrl = (teamName: string) => {
   return `https://media.formula1.com/image/upload/c_lfill,w_96/q_auto/v1740000001/common/f1/2026/${teamSlug}/2026${teamSlug}logowhite.webp`
 }
 
-const buildPortraitUrl = (teamName: string, headshotUrl: string) => {
+const buildPortraitUrl = (
+  teamName: string,
+  headshotUrl: string,
+  width = 440
+) => {
   const teamSlug = teamName.toLowerCase().replace(/[^a-z0-9]+/g, "")
 
   const codeMatch = headshotUrl.match(/\/([a-z0-9]{8})\.png/i)
@@ -111,7 +133,7 @@ const buildPortraitUrl = (teamName: string, headshotUrl: string) => {
   }
 
   const code = codeMatch[1].toLowerCase()
-  return `https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/v1740000001/common/f1/2026/${teamSlug}/${code}/2026${teamSlug}${code}right.webp`
+  return `https://media.formula1.com/image/upload/c_lfill,w_${width}/q_auto/v1740000001/common/f1/2026/${teamSlug}/${code}/2026${teamSlug}${code}right.webp`
 }
 
 const titleCaseName = (name: string) => {
@@ -186,6 +208,120 @@ function getShortName(teamName: string) {
     .toUpperCase()
 }
 
+function slugify(value: string) {
+  return value.toLowerCase().replace(/\s+/g, "-")
+}
+
+function buildNavData(teams: TeamUnified[], drivers: DriverApi[]) {
+  const teamLinks = teams
+    .slice()
+    .sort((a, b) => a.position - b.position)
+    .map((team) => ({
+      title: team.name,
+      href: `/team/${team.slug}`,
+      carImage: team.carImage ?? TEAM_CAR_IMAGE[team.name] ?? "",
+    }))
+
+  const uniqueDrivers = Array.from(
+    new Map(drivers.map((driver) => [driver.driver_number, driver])).values()
+  )
+
+  const driverLinks = uniqueDrivers
+    .slice()
+    .sort((a, b) =>
+      titleCaseName(a.full_name).localeCompare(titleCaseName(b.full_name))
+    )
+    .map((driver) => {
+      const title = titleCaseName(driver.full_name)
+      const image =
+        buildPortraitUrl(driver.team_name, driver.headshot_url) ??
+        driver.headshot_url
+
+      return {
+        title,
+        href: `/driver/${slugify(title)}`,
+        image,
+      }
+    })
+
+  return { teamLinks, driverLinks }
+}
+
+async function writeNavDataFiles(
+  root: string,
+  teams: TeamUnified[],
+  drivers: DriverApi[]
+) {
+  const navDir = path.join(root, "src", "components", "navigation")
+  const teamLinksPath = path.join(navDir, "nav-team-links.json")
+  const driverLinksPath = path.join(navDir, "nav-driver-links.json")
+  const { teamLinks, driverLinks } = buildNavData(teams, drivers)
+
+  await Promise.all([
+    writeFile(
+      teamLinksPath,
+      `${JSON.stringify(teamLinks, null, 2)}\n`,
+      "utf-8"
+    ),
+    writeFile(
+      driverLinksPath,
+      `${JSON.stringify(driverLinks, null, 2)}\n`,
+      "utf-8"
+    ),
+  ])
+
+  console.log(`Wrote navigation team links to ${teamLinksPath}`)
+  console.log(`Wrote navigation driver links to ${driverLinksPath}`)
+}
+
+async function writeNavDataFromJson(root: string) {
+  const teamsPath = path.join(root, "public", "f1", "teams-unified.json")
+  const driversPath = path.join(root, "public", "drivers.json")
+
+  const [teamsRaw, driversRaw] = await Promise.all([
+    readFile(teamsPath, "utf-8"),
+    readFile(driversPath, "utf-8"),
+  ])
+
+  const teams = JSON.parse(teamsRaw) as TeamUnified[]
+  const drivers = JSON.parse(driversRaw) as DriverApi[]
+
+  await writeNavDataFiles(root, teams, drivers)
+}
+
+async function writeDriverStandingsWithImages(
+  root: string,
+  drivers: DriverApi[]
+) {
+  const driverStandingsPath = path.join(root, "public", "driver_standings.json")
+  const standingsRaw = await readFile(driverStandingsPath, "utf-8")
+  const standings = JSON.parse(standingsRaw) as DriverStandingRow[]
+
+  const driversByNumber = new Map(
+    drivers.map((driver) => [driver.driver_number, driver])
+  )
+
+  const standingsWithImages = standings.map((standing) => {
+    const driver = driversByNumber.get(standing.driver_number)
+    const image = driver
+      ? (buildPortraitUrl(driver.team_name, driver.headshot_url) ??
+        driver.headshot_url)
+      : (standing.image ?? null)
+
+    return {
+      ...standing,
+      image,
+    }
+  })
+
+  await writeFile(
+    driverStandingsPath,
+    `${JSON.stringify(standingsWithImages, null, 2)}\n`,
+    "utf-8"
+  )
+  console.log(`Wrote driver standings with images to ${driverStandingsPath}`)
+}
+
 function getDriverStatus(
   result: SessionResult,
   averagePosition: number | null
@@ -216,6 +352,8 @@ async function getRaceSessions() {
 
 async function run() {
   const root = process.cwd()
+  await writeNavDataFromJson(root)
+
   const narrativesPath = path.join(root, "public", "f1", "teams-content.json")
   const driversContentPath = path.join(
     root,
@@ -243,6 +381,8 @@ async function run() {
       readFile(driversContentPath, "utf-8"),
       getRaceSessions(),
     ])
+
+  await writeDriverStandingsWithImages(root, drivers)
 
   const recentSessions = sessions.slice(-RACE_LOOKBACK)
 
@@ -315,6 +455,8 @@ async function run() {
 
   await writeFile(outputPath, `${JSON.stringify(unified, null, 2)}\n`, "utf-8")
   console.log(`Wrote ${unified.length} teams to ${outputPath}`)
+
+  await writeNavDataFiles(root, unified as TeamUnified[], drivers)
 
   const seasonResults: SessionResult[][] = []
   for (const session of sessions) {
@@ -466,6 +608,9 @@ async function run() {
     .sort((a, b) => a.position - b.position)
     .map((driver) => {
       const matchingTeam = unifiedByName.get(driver.team)
+      const matchingDriver = drivers.find(
+        (driverApi) => driverApi.driver_number === driver.driverNumber
+      )
 
       return {
         position: driver.position,
@@ -477,6 +622,12 @@ async function run() {
           ? getShortName(matchingTeam.name)
           : getShortName(driver.team),
         number: driver.driverNumber,
+        image: matchingDriver
+          ? (buildPortraitUrl(
+              matchingDriver.team_name,
+              matchingDriver.headshot_url
+            ) ?? matchingDriver.headshot_url)
+          : null,
         points: driver.points,
         form: normalizeForm(
           driverFormByNumber.get(driver.driverNumber),

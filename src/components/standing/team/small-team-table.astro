@@ -1,0 +1,9 @@
+---
+import { getStandingsPageData } from "../data"
+
+import { SmallDriverTable as Table } from "./small-team-table"
+const { teams } = await getStandingsPageData()
+---
+
+<!-- <DemoPage data={data} client:load /> -->
+<Table teams={teams} client:load />
