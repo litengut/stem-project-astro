@@ -16,19 +16,27 @@ const { teamName, teamDrivers, teamPrimary } = Astro.props
   style={`--f1-team-primary: ${teamPrimary};`}
 >
   <div class="mb-4 flex items-end justify-between gap-3">
-    <h2 class="text-4xl font-black leading-none tracking-tight md:text-6xl">Drivers</h2>
-    <p class="text-xs tracking-[0.28em] text-muted-foreground uppercase">Line-up</p>
+    <h2 class="text-4xl font-black md:text-6xl">Drivers</h2>
+    <p class="text-xs text-muted-foreground uppercase">Line-up</p>
   </div>
 
   <div class="grid gap-4 md:grid-cols-2">
-    {teamDrivers.map((driver) => (
-      <TeamDriverCard driver={driver} teamName={teamName} teamPrimary={teamPrimary} />
-    ))}
+    {
+      teamDrivers.map((driver) => (
+        <TeamDriverCard
+          driver={driver}
+          teamName={teamName}
+          teamPrimary={teamPrimary}
+        />
+      ))
+    }
 
-    {teamDrivers.length === 0 && (
-      <div class="rounded-lg border bg-muted/40 p-3 text-sm text-muted-foreground">
-        Driver cards are not available yet.
-      </div>
-    )}
+    {
+      teamDrivers.length === 0 && (
+        <div class="rounded-lg border bg-muted/40 p-3 text-sm text-muted-foreground">
+          Driver cards are not available yet.
+        </div>
+      )
+    }
   </div>
 </section>

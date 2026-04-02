@@ -1,7 +1,6 @@
 ---
 import { TopBar } from "@/components/TopBar"
 
-import Welcome from "../components/Welcome.astro"
 import Layout from "../layouts/main.astro"
 import { ModeToggle } from "@/components/ui/ModeToggle"
 import heroBg from "../../public/2026_Explainer_FIA_Front_3_4_1920x1080.avif"
@@ -13,7 +12,7 @@ import { getF1LatestNews } from "@/lib/f1-news"
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
-const f1News = await getF1LatestNews(9)
+const f1News = await getF1LatestNews(10)
 ---
 
 <Layout>
@@ -32,14 +31,10 @@ const f1News = await getF1LatestNews(9)
       <div
         class="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center"
       >
-        <h1
-          class="font-display mb-2 text-6xl font-black tracking-tight text-foreground"
-        >
+        <h1 class="font-display mb-2 text-6xl font-black text-foreground">
           F1 <span class="text-primary">STANDINGS</span>
         </h1>
-        <p
-          class="font-display text-base tracking-[0.3em] text-muted-foreground uppercase"
-        >
+        <p class="font-display text-base text-muted-foreground uppercase">
           2026 World Championship
         </p>
       </div>

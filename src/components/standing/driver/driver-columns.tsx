@@ -28,7 +28,7 @@ export const driverColumns: ColumnDef<DriverStandingRow>[] = [
   },
   {
     accessorKey: "image",
-    header: "image",
+    header: "",
     meta: {
       className: "w-20",
     },
@@ -48,7 +48,7 @@ export const driverColumns: ColumnDef<DriverStandingRow>[] = [
     accessorKey: "driver",
     header: "Driver",
     meta: {
-      className: "w-[10rem] flex",
+      className: "w-[10rem] ",
     },
 
     cell: ({ row }) => {

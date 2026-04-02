@@ -23,18 +23,6 @@ export function TeamsMenu({ teamLinks }: Props) {
               <NavigationMenuLink render={<Preview team={team}></Preview>} />
             </li>
           ))}
-          {/* <li className="col-span-4">
-            <NavigationMenuLink
-              render={
-                <a
-                  className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted"
-                  href="/"
-                >
-                  View full standings
-                </a>
-              }
-            />
-          </li> */}
         </ul>
       </NavigationMenuContent>
     </NavigationMenuItem>

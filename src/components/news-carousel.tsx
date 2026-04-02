@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import type { F1NewsItem } from "@/lib/f1-news"
-import { NewsCard } from "./Newscard"
+import { NewsCard } from "./NewsCard"
 
 type Props = {
   items: F1NewsItem[]

@@ -10,16 +10,14 @@ export default function DemoPage({ data }: { data: StandingsPageData }) {
     <div className="container mx-auto space-y-10 px-4 py-10">
       <section className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-bold tracking-tight">
-            Driver Standings
-          </h2>
+          <h2 className="text-3xl font-bold">Driver Standings</h2>
           <p className="text-sm text-muted-foreground">Updated {updatedAt}</p>
         </div>
         <DataTable columns={driverColumns} data={drivers} />
       </section>
 
       <section className="space-y-4">
-        <h2 className="text-3xl font-bold tracking-tight">Team Standings</h2>
+        <h2 className="text-3xl font-bold">Team Standings</h2>
         <DataTable columns={columns} data={teams} />
       </section>
 
